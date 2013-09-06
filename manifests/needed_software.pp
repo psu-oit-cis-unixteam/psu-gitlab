@@ -24,7 +24,7 @@ class gitlab5::needed_software.pp
 	$software3 = [ "pcre-devel", "git", "memcached-devel", "valgrind-devel", "mysql-devel", "ImageMagick-devel" ]
 	$software4 = [ "ImageMagick", "libicu", "libicu-devel", "libffi-devel", "make", "bzip2", "autoconf" ]
 	$software5 = [ "automake", "libtool", "bison", iconv-devel", "redis", "perl-ExtUtils-CBuilder" ]
-	$software6 = [ "perl=ExtUtils-MakeMaker", "wget", "ruby" ]
+	$software6 = [ "perl-ExtUtils-MakeMaker", "wget", "ruby" ]
 
 	package { $software1: ensure => "installed" }
 	package { $software2: ensure => "installed" }
