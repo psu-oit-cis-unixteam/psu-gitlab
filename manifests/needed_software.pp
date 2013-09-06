@@ -33,10 +33,6 @@ class gitlab5::needed_software.pp
 	package { $software5: ensure => "installed" }
 	package { $software6: ensure => "installed" }
 
-	exec { 'updating the OS':
-	   command	=> '/usr/bin/yum update -y',
-}
-
 	service { "redis":
 	   ensure => "running",
 }
