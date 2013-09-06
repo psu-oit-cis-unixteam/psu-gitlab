@@ -1,4 +1,4 @@
-class gitlab5::needed_software.pp
+class gitlab5::needed_software.pp {
 
 # this is not needed if using RHN Classic or RH Satelitte
 # I had this since I used the CentOS repos
@@ -17,13 +17,13 @@ class gitlab5::needed_software.pp
 
 	exec { 'installing Development Tools':
 	   command	=> '/usr/bin/yum -y groupinstall "Development Tools" ',
-}
+	}
 
-	$software1 = [ "devel", "libyaml-devel", "libxml2-devel"m "gdbm-devel", "libffi-devel", "zlib" ]
+	$software1 = [ "devel", "libyaml-devel", "libxml2-devel", "gdbm-devel", "libffi-devel", "zlib" ]
 	$software2 = [ "zlib-devel", "openssh-devel", "readline", "readline-devel", "curl-devel" ]
 	$software3 = [ "pcre-devel", "git", "memcached-devel", "valgrind-devel", "mysql-devel", "ImageMagick-devel" ]
 	$software4 = [ "ImageMagick", "libicu", "libicu-devel", "libffi-devel", "make", "bzip2", "autoconf" ]
-	$software5 = [ "automake", "libtool", "bison", iconv-devel", "redis", "perl-ExtUtils-CBuilder" ]
+	$software5 = [ "automake", "libtool", "bison", "iconv-devel", "redis", "perl-ExtUtils-CBuilder" ]
 	$software6 = [ "perl-ExtUtils-MakeMaker", "wget", "ruby" ]
 
 	package { $software1: ensure => "installed" }
@@ -35,4 +35,5 @@ class gitlab5::needed_software.pp
 
 	service { "redis":
 	   ensure => "running",
+	}
 }
