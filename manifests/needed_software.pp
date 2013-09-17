@@ -1,4 +1,4 @@
-class gitlab5::needed_software.pp {
+class gitlab::needed_software.pp {
 
 # this is not needed if using RHN Classic or RH Satelitte
 # I had this since I used the CentOS repos
