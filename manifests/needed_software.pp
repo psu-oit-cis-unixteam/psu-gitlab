@@ -1,10 +1,10 @@
-class gitlab::needed_software {
+class needed_software {
 
 # this is not needed if using RHN Classic or RH Satelitte
 # I had this since I used the CentOS repos
 #
 # exec { 'adding needed repo':
-#   command  => '/usr/bin/rpm -Uvh http://dl.fedoraproject.org/pub/epel/6/x86_64/epel-release-6-8.noarch.rpm',
+# command  => '/usr/bin/rpm -Uvh http://dl.fedoraproject.org/pub/epel/6/x86_64/epel-release-6-8.noarch.rpm',
 #}
 
 # this could be a better example. let's hope so. using arrays and puppet commands instead of just commands
@@ -26,12 +26,12 @@ class gitlab::needed_software {
         $software5 = [ 'automake', 'libtool', 'bison', 'iconv-devel', 'redis', 'perl-ExtUtils-CBuilder' ]
         $software6 = [ 'perl-ExtUtils-MakeMaker', 'wget', 'ruby' ]
 
-        package { $software1: ensure => 'installed' }
-        package { $software2: ensure => 'installed' }
-        package { $software3: ensure => 'installed' }
-        package { $software4: ensure => 'installed' }
-        package { $software5: ensure => 'installed' }
-        package { $software6: ensure => 'installed' }
+        package { $software1: ensure => installed }
+        package { $software2: ensure => installed }
+        package { $software3: ensure => installed }
+        package { $software4: ensure => installed }
+        package { $software5: ensure => installed }
+        package { $software6: ensure => installed }
 
         service { 'redis':
           ensure => running,
