@@ -10,7 +10,7 @@ class gitlab::needed_software {
 # this could be a better example. let's hope so. using arrays and puppet commands instead of just commands
 # what we need to do first is to install the base which gitlab5 needs
 # we need this base since we need to compile git (the CentOS git doesn't work properly with gitlab5)
-# then it's nice to update the OS and to ensure the redis is up and running (gitlab5 needs redis). 
+# then it's nice to update the OS and to ensure the redis is up and running (gitlab5 needs redis)
 
 # this may not be needed as well since it seems that the CentOS setup, using the RH repos comes
 # with the compiler tools already installed
@@ -34,6 +34,6 @@ class gitlab::needed_software {
         package { $software6: ensure => 'installed' }
 
         service { 'redis':
-           ensure => 'running',
+          ensure => running,
         }
 }
