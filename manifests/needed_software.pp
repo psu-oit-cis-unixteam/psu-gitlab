@@ -15,11 +15,14 @@ class gitlab5::needed_software.pp {
 # then it's nice to update the OS and to ensure the redis is up and running (gitlab5 needs redis). 
 # 
 
-	exec { 'installing Development Tools':
-	   command	=> '/usr/bin/yum -y groupinstall "Development Tools" ',
-	}
+# this may not be needed as well since it seems that the CentOS setup, using the RH repos comes
+# with the compiler tools already installed
+#
+#	exec { 'installing Development Tools':
+#	 command	=> '/usr/bin/yum -y groupinstall "Development Tools" ',
+#	}
 
-	$software1 = [ "devel", "libyaml-devel", "libxml2-devel", "gdbm-devel", "libffi-devel", "zlib" ]
+	$software1 = [ "libyaml-devel", "libxml2-devel", "gdbm-devel", "libffi-devel", "zlib" ]
 	$software2 = [ "zlib-devel", "openssh-devel", "readline", "readline-devel", "curl-devel" ]
 	$software3 = [ "pcre-devel", "git", "memcached-devel", "valgrind-devel", "mysql-devel", "ImageMagick-devel" ]
 	$software4 = [ "ImageMagick", "libicu", "libicu-devel", "libffi-devel", "make", "bzip2", "autoconf" ]
