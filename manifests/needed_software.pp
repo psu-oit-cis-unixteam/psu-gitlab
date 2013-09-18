@@ -1,3 +1,6 @@
+#
+# = Gitlab installer.  for needed software.
+#
 class gitlab::needed_software {
 
 # this is not needed if using RHN Classic or RH Satelitte
