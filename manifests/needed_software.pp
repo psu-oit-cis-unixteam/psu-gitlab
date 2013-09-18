@@ -25,7 +25,7 @@ class gitlab::needed_software {
         $software1 = [ 'libyaml-devel', 'libxml2-devel', 'gdbm-devel', 'libffi-devel', 'zlib' ]
         $software2 = [ 'zlib-devel', 'openssh-devel', 'readline', 'readline-devel', 'curl-devel' ]
         $software3 = [ 'pcre-devel', 'git', 'memcached-devel', 'valgrind-devel', 'mysql-devel', 'ImageMagick-devel' ]
-        $software4 = [ 'ImageMagick', 'libicu', 'libicu-devel', 'libffi-devel', 'make', 'bzip2', 'autoconf' ]
+        $software4 = [ 'ImageMagick', 'libicu', 'libicu-devel', 'make', 'bzip2', 'autoconf' ]
         $software5 = [ 'automake', 'libtool', 'bison', 'iconv-devel', 'redis', 'perl-ExtUtils-CBuilder' ]
         $software6 = [ 'perl-ExtUtils-MakeMaker', 'wget', 'ruby' ]
 
